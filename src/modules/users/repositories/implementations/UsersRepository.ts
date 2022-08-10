@@ -4,6 +4,7 @@ import { IUsersRepository, ICreateUserDTO } from "../IUsersRepository";
 class UsersRepository implements IUsersRepository {
   private users: User[];
 
+  //singleton 
   private static INSTANCE: UsersRepository;
 
   private constructor() {
@@ -17,7 +18,7 @@ class UsersRepository implements IUsersRepository {
 
     return UsersRepository.INSTANCE;
   }
-
+  /*
   create({ name, email }: ICreateUserDTO): User {
     // Complete aqui
   }
@@ -36,7 +37,7 @@ class UsersRepository implements IUsersRepository {
 
   list(): User[] {
     // Complete aqui
-  }
+  }*/
 }
 
 export { UsersRepository };
