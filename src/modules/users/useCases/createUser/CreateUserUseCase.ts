@@ -11,6 +11,7 @@ interface IRequest {
 class CreateUserUseCase {
     //constructor(private usersRepository: IUsersRepository) {}
     constructor (private usersRepository: UsersRepository){};
+    
     execute({email, name}: IRequest): void {
         const userAlreadyExists = this.usersRepository.findByEmail(email);
 

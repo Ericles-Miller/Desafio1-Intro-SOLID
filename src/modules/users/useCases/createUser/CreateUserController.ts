@@ -9,16 +9,8 @@ class CreateUserController {
   handle(request: Request, response: Response): Response {
     const {name,email} = request.body;
 
-    const createUserUseCase = new CreateUserUseCase();
-
-    Object.assign(user,{
-      name,  
-      email,
-      admin:false,
-    });
-      
-  users.push(user);
-  return response.status(201).json({users});
+    this.createUserUseCase.execute({name,email});
+    return response.status(201).send();
   }
 }
 

@@ -14,12 +14,7 @@ const usersRoutes = Router();
 const users: User[] = []; // importei a classe usuario
 
 usersRoutes.post("/", (request, response) => {
-    // createUserController.handle(request, response);
-    const {name, description} = request.body;
-
-    const createUserUseCase = new CreateUserUseCase(usersRepository); 
-   
-    return response.status(201).send();
+    return createUserController.handle(request, response); 
 });
 
 usersRoutes.patch("/:user_id/admin", (request, response) =>
@@ -32,9 +27,9 @@ usersRoutes.get("/:user_id", (request, response) =>
 
 usersRoutes.get("/", (request, response) => {
   //listAllUsersController.handle(request, response)
-  const all = UsersRepository.list(); 
+  //const all = UsersRepository.list(); 
 
-  return response.json(all);
+  //return response.json(all);
 });
 
 export { usersRoutes };
