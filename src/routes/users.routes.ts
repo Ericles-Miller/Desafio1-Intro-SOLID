@@ -26,10 +26,7 @@ usersRoutes.get("/:user_id", (request, response) =>
 );
 
 usersRoutes.get("/", (request, response) => {
-  //listAllUsersController.handle(request, response)
-  //const all = UsersRepository.list(); 
-
-  //return response.json(all);
+  return listAllUsersController.handle(request, response)
 });
 
 export { usersRoutes };
