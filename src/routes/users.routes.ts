@@ -1,4 +1,6 @@
 import { Router } from "express";
+import { UsersRepository } from "modules/users/repositories/implementations/UsersRepository";
+import { CreateUserUseCase } from "modules/users/useCases/createUser/CreateUserUseCase";
 import { User } from "../modules/users/model/User";
 
 
@@ -12,19 +14,12 @@ const usersRoutes = Router();
 const users: User[] = []; // importei a classe usuario
 
 usersRoutes.post("/", (request, response) => {
-  //createUserController.handle(request, response);
-  const {name,email} = request.body;
+    // createUserController.handle(request, response);
+    const {name, description} = request.body;
 
-  const user = new User();
-
-  Object.assign(user,{
-      name,  
-      email,
-      admin:false,
-  });
-      
-  users.push(user);
-  return response.status(201).json({users});
+    const createUserUseCase = new CreateUserUseCase(usersRepository); 
+   
+    return response.status(201).send();
 });
 
 usersRoutes.patch("/:user_id/admin", (request, response) =>
@@ -35,8 +30,11 @@ usersRoutes.get("/:user_id", (request, response) =>
   showUserProfileController.handle(request, response)
 );
 
-usersRoutes.get("/", (request, response) =>
-  listAllUsersController.handle(request, response)
-);
+usersRoutes.get("/", (request, response) => {
+  //listAllUsersController.handle(request, response)
+  const all = UsersRepository.list(); 
+
+  return response.json(all);
+});
 
 export { usersRoutes };

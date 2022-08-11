@@ -4,7 +4,9 @@ class User {
     id?  :string; 
     name :string;
     email:string;
-    admin:false;  
+    admin:false; 
+    created_at: string; 
+    updated_at: string;
 
     constructor() {
         if(!this.id){
