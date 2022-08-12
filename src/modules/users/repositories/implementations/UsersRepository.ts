@@ -26,6 +26,7 @@ class UsersRepository implements IUsersRepository {
         email,
         admin: false,
         created_at: new Date(),
+        updated_at: new Date()
       });
       
       this.users.push(user);
@@ -44,6 +45,7 @@ class UsersRepository implements IUsersRepository {
 
   turnAdmin(user: User): User {
       user.admin = true;
+      user.updated_at = new Date();
       return user;
   }
 
