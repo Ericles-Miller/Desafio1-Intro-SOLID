@@ -44,11 +44,13 @@ class UsersRepository implements IUsersRepository {
 
   turnAdmin(user: User): User {
     user.admin = true;
-
     return user;
   }
 
   list(): User[] {
+
+    
+
     return this.users; 
   }
 
