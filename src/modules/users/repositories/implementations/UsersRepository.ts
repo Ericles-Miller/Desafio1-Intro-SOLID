@@ -33,7 +33,8 @@ class UsersRepository implements IUsersRepository {
   }
 
   findById(id: string): User {
-    throw new Error("Method not implemented.");
+    const todo = this.users.find(user => user.id === id);
+    return todo;
   }
   
   findByEmail(email:string): User {
@@ -42,7 +43,9 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(user: User): User {
-    throw new Error("Method not implemented.");
+    user.admin = true;
+
+    return user;
   }
 
   list(): User[] {
