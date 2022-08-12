@@ -15,7 +15,6 @@ class UsersRepository implements IUsersRepository {
     if (!UsersRepository.INSTANCE) {
       UsersRepository.INSTANCE = new UsersRepository();
     }
-
     return UsersRepository.INSTANCE;
   }
 
@@ -28,16 +27,17 @@ class UsersRepository implements IUsersRepository {
         admin: false,
         created_at: new Date(),
       });
-
+      
       this.users.push(user);
+      console.log(user);
   }
 
   findById(id: string): User {
     throw new Error("Method not implemented.");
   }
   
-  findByEmail(email: string): User {
-    const user = this.users.find(email => user.email === email);
+  findByEmail(email:string): User {
+    const user = this.users.find(user => user.email === email); 
     return user;
   }
 
