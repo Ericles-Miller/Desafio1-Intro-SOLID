@@ -4,7 +4,7 @@ class User {
     id?  :string; 
     name :string;
     email:string;
-    admin:false; 
+    admin:boolean; 
     created_at: string; 
     updated_at?: string;
 
