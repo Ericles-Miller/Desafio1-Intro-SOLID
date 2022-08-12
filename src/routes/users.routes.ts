@@ -18,11 +18,11 @@ usersRoutes.post("/", (request, response) => {
 });
 
 usersRoutes.patch("/:user_id/admin", (request, response) =>
-  turnUserAdminController.handle(request, response)
+    turnUserAdminController.handle(request, response)
 );
 
 usersRoutes.get("/:user_id", (request, response) =>
-  showUserProfileController.handle(request, response)
+    showUserProfileController.handle(request, response)
 );
 
 usersRoutes.get("/", (request, response) => {

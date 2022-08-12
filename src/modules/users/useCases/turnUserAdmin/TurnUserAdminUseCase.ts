@@ -16,7 +16,7 @@ class TurnUserAdminUseCase {
     }
 
     const turnAdmin = this.usersRepository.turnAdmin(idAlreadyExists);
-    console.log(turnAdmin);
+    console.log(turnAdmin); // tirar depois 
     return turnAdmin;
 
   }
