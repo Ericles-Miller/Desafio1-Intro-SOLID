@@ -1,12 +1,12 @@
 import { v4 as uuidV4 } from "uuid";
 
 class User {
-    id?  :string; 
+    id   :string; 
     name :string;
     email:string;
     admin:boolean; 
-    created_at: string; 
-    updated_at?: string;
+    created_at: Date; 
+    updated_at: Date;
 
     constructor() {
         if(!this.id){
