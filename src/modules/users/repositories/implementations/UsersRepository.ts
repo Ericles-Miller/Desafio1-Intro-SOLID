@@ -19,7 +19,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   create({ name, email }: ICreateUserDTO):User{
-      const user = new User();
+      const user = new User(); // constructor do id 
 
       Object.assign(user,{
         name,
