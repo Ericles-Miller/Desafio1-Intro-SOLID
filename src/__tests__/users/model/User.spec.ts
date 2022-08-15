@@ -11,6 +11,7 @@ describe("User model", () => {
       email: "atlas@fromspace.com",
       created_at: new Date(),
       updated_at: new Date(),
+      admin : false
     });
 
     expect(user).toMatchObject({
@@ -18,6 +19,7 @@ describe("User model", () => {
       email: "atlas@fromspace.com",
       admin: false,
     });
+    console.log(user);
     expect(validate(user.id)).toBe(true);
     expect(user.created_at).toBeInstanceOf(Date);
     expect(user.updated_at).toBeInstanceOf(Date);
