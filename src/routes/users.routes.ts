@@ -1,9 +1,5 @@
 import { Router } from "express";
-import { UsersRepository } from "modules/users/repositories/implementations/UsersRepository";
-import { CreateUserUseCase } from "modules/users/useCases/createUser/CreateUserUseCase";
 import { User } from "../modules/users/model/User";
-
-
 import { createUserController } from "../modules/users/useCases/createUser";
 import { listAllUsersController } from "../modules/users/useCases/listAllUsers";
 import { showUserProfileController } from "../modules/users/useCases/showUserProfile";

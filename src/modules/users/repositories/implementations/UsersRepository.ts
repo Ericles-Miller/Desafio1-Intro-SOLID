@@ -18,7 +18,7 @@ class UsersRepository implements IUsersRepository {
     return UsersRepository.INSTANCE;
   }
 
-  create({ name, email }: ICreateUserDTO){
+  create({ name, email }: ICreateUserDTO):User{
       const user = new User();
 
       Object.assign(user,{
@@ -30,7 +30,7 @@ class UsersRepository implements IUsersRepository {
       });
       
       this.users.push(user);
-      console.log(user);
+      return user;
   }
 
   findById(id: string): User {
